@@ -13,12 +13,13 @@ class PersonaController extends Controller
         return view("index", ["personas" => $personas]);
     }
 
-    public function Insertar(Request $request){
+    public function Insertar(Request $request)
+    {
         $persona = new Persona();
         $persona->nombre = $request->post("nombre");
         $persona->apellido = $request->post("apellido");
         $persona->telefono = $request->post("telefono");
         $persona->save();
-        return redirect(("/")->with("personaAgregada", true);
+        return redirect("/")->with("personaAgregada", true);
     }
 }
