@@ -15,6 +15,9 @@ return new class extends Migration {
             $table->string('nombre');
             $table->string('apellido');
             $table->string('telefono');
+            $table->created_at();
+            $table->updated_at();
+            $table->deleted_at();
             $table->softDeletes();
             $table->timestamps();
         });
